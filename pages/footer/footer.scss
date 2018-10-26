@@ -1,0 +1,14 @@
+.imge{
+    float:left;
+}
+.fbody{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+.footer{
+    color: #00123a;
+    display:flex;
+    flex-direction:column;
+    bottom: 0;
+}

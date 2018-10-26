@@ -1,14 +1,24 @@
 var jiffApp = angular.module('jiffApp', [
 	"ngRoute",
-	"dashboard"
+  "dashboard",
+  "footer",
+  "ford",
+  "carsgrid",
+  "cardetails"
 ]); 
 
-jiffApp.config(['$locationProvider' ,'$routeProvider',
+jiffApp.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
         when('/dashboard', {
+          template: '<dashboard></dashboard>'
+        }).
+        when('/cardetails', {
+          template: '<cardetails></cardetails>'
+        }).
+        when('/dashboard/:color', {
           template: '<dashboard></dashboard>'
         }).
         otherwise('/dashboard');

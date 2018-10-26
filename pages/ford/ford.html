@@ -1,0 +1,39 @@
+<div class="row3">
+    <div class="column1">
+        <div class="row1">
+            <div class="fst">
+                  <p>Exterior Color</p>
+                      {{exteriorColorName}}
+                  <div class="exterior">
+                        <div ng-repeat="excolor in exterior" ng-style="{'background-color':'{{excolor.SwatchHexCode.replace('0x', '#')}}'}" class="exteriorColor" ng-click="onClickExterior(excolor.Name)">
+                        </div>
+                  </div>
+            </div>
+            <div class="scnd">
+                  <p>Interior Color</p>
+                      {{interiorColorName}}
+                  <div class="interior">
+                        <div ng-repeat="incolor in interior" class="interiorColor">
+                        <img src={{incolor.SwatchUrl}} ng-click="onClickInterior(incolor.Name)">
+                        {{incolor.Name}}
+                        </div>
+                </div>
+            </div>
+            <div class="thrd">
+                <h3>price</h3>
+                {{valuemin}}
+                {{valuemax}}
+                <div class="price">
+                    <p>Minimum Price</p>
+                    <input type="number" ng-style="{'width':'40%'}" ng-model="valuemin" ng-change="valueMinChange(valuemin)" />
+                    <p>Maximum Price</p>
+                    <input type="number" ng-style="{'width':'40%'}" ng-model="valuemax" ng-change="valueMaxChange(valuemax)" />
+                    <input class="btn2" ng-style="{'width':'40%'}" type="button" onClick="" value="SUBMIT"/>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div class="column2">
+        <carsGrid></carsGrid>
+    </div>
+</div>
