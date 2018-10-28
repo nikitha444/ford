@@ -15,7 +15,7 @@ jiffApp.config(['$locationProvider', '$routeProvider',
         when('/dashboard', {
           template: '<dashboard></dashboard>'
         }).
-        when('/cardetails', {
+        when('/cardetails/:vin', {
           template: '<cardetails></cardetails>'
         }).
         when('/dashboard/:color', {

@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html ng-app="jiffApp">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Angular Boilerplate 1.6</title>
-	<link rel='stylesheet' id='fonts-css'  href='//fonts.googleapis.com/css?family=Lato:100,400,700,600,400italic,600italic,700italic' media='all' />
+	<link rel='stylesheet' id='fonts-css' href='//fonts.googleapis.com/css?family=Lato:100,400,700,600,400italic,600italic,700italic'
+	 media='all' />
 	<link rel="stylesheet" type="text/css" href="dist/app.min.css">
 </head>
+
 <body>
 
-<div ng-view></div>
+	<div ng-view></div>
 
-<!--Angular Files-->
-<script type="text/javascript" src="dist/lib.min.js"></script>
+	<!--Angular Files-->
+	<script type="text/javascript" src="dist/lib.min.js"></script>
 
-<!-- App Files-->
-<script type="text/javascript" src="dist/app.min.js"></script>
+	<!-- App Files-->
+	<script type="text/javascript" src="dist/app.min.js"></script>
 
-<!-- controllers-->
-<script src="controllers/dashboardCtrl.js"></script>
-<script src="controllers/fordCtrl.js"></script>
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
 
-<!-- services-->
-<script src="services/programService.js"></script>
-<script src="services/programServiceCars.js"></script>
-<script src="services/programServiceExterior.js"></script>
-<script src="services/programServiceInterior.js"></script>
-<script src="services/programServiceSort.js"></script>
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
 
-<!-- components-->
-<!-- <script src="pages/footer.js"></script> -->
+	<!-- controllers-->
+	<script src="controllers/dashboardCtrl.js"></script>
+	<script src="controllers/fordCtrl.js"></script>
+	<script src="controllers/CarDetailCtrl.js"></script>
+
+	<!-- services-->
+	<script src="services/programService.js"></script>
+	<!-- <script src="services/programServiceCars.js"></script>
+	<script src="services/programServiceExterior.js"></script>
+	<script src="services/programServiceInterior.js"></script>
+	<script src="services/programServiceSort.js"></script> -->
+
+	<!-- components-->
+	<!-- <script src="pages/footer.js"></script> -->
 
 </body>
+
 </html>

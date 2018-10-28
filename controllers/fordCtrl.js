@@ -76,7 +76,7 @@
             };
             $scope.viewcardetails = function (car) {
                 $scope.eachcar = car;
-                $location.path("/cardetails");
+                $location.path("/cardetails/"+car.Vin);
             };
         }
     ]);
