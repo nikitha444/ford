@@ -4,7 +4,9 @@
 .imageprice {
     display:flex;
     flex-direction:row;
+    justify-content: space-around;
     color: #222;
+    padding-top: 80px;
 }
 .carimage {
     display:flex;
@@ -16,5 +18,35 @@
 }
 .pricesummary {
     display:flex;
-    flex-direction:row;
+    flex-direction: column;
+    color: #222;
+    justify-content: space-around;
+}
+.summaryheading {
+    font-weight: bold;
+    font-size: 2em;
+}
+.vehicleheading {
+    font-weight: bold;
+    font-size: 2em;
+}
+.yourvehicle {
+    display: flex;
+    flex-direction: column;
+    color: #222;
+    justify-content: space-around;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border:1px solid gray;
+    padding-left:50px;
+    padding-right: 50px;
+    margin: 2px;
+}
+.summaryvehicle {
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+}
+.model {
+    font-weight: bold;
+    font-size: 1.4em;
 }

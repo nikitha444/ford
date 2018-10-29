@@ -25,7 +25,7 @@ angular.module('programServiceCars', [])
      * @return Promise object  
      */
     var getCars = function(){ 
-    	return $http.get('http://wwwqa.servicesus.ford.com/inventory/Search.json?make=Ford&model=Mustang&year=2017&dealerPACode=05453;09158&postalCode=90210').then(function(res){
+    	return $http.get('http://wwwqa.servicesus.ford.com/inventory/Search.json?make=Ford&model=F-150;Fiesta;Mustang;Fusion;Transit&year=2017&dealerPACode=05453;09158&postalCode=90210').then(function(res){
         console.log("bsjbd", res.data)
         return res.data;
         });
@@ -41,7 +41,7 @@ angular.module('programServiceExterior', [])
      * @return Promise object  
      */
     var getExtFilter = function(extColor){ 
-    	return $http.get('http://wwwqa.servicesus.ford.com/inventory/Search.json?make=Ford&model=Mustang&year=2017&dealerPACode=05453;09158&postalCode=90210' + "&exteriorColor=" + extColor).then(function(res){
+    	return $http.get('http://wwwqa.servicesus.ford.com/inventory/Search.json?make=Ford&model=F-150;Fiesta;Mustang;Fusion;Transit&year=2017&dealerPACode=05453;09158&postalCode=90210' + "&exteriorColor=" + extColor).then(function(res){
         console.log("result", res.data)
         return res.data;
         })

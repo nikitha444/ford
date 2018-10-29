@@ -1,25 +1,39 @@
 <div class="App">
         <div class="App-header">
             <img src="image.png" class="App-logo" alt="logo" />
-            <h2>{{name}}</h2>
             <div class="imageprice">
                 <div class="carimage">
                         <img class="imges" src="http://build.ford.com/dig/Ford/Mustang/2017/HD-FULL/ + {{eachcar.ImageToken}} + /EXT/1/vehicle.png?r=NaN" height="150px" width="150px" />
                 </div>
                 <div class="price">
-                        {{eachcar.Model.Year}} {{eachcar.Model.ModelName}} {{eachcar.Model.Make}}
+                        <span class="model">{{eachcar.Model.Year}} {{eachcar.Model.ModelName}} {{eachcar.Model.Make}}</span>
+                        <span class="model">{{eachcar.Pricing.MSRP}}</span>
+                        <!-- <md-button class="md-raised">Button</md-button> -->
                         <input class="btn1" type="button" value="Get an Internet Price"/>
                 </div>
+                <md-divider></md-divider>
             </div>
+            <div class="summaryvehicle">
             <div class="pricesummary">
-                Pricing Summary
-                Base MSRP {{eachcar.Pricing.BaseMSRP}}
-                Total Of Options {{eachcar.Pricing.Options}}
-                Destination Charges {{eachcar.Pricing.DestinationDeliveryCharge}}
-                MSRP {{eachcar.Pricing.MSRP}}
+                <span class="summaryheading">Pricing Summary</span>
+                <md-divider ng-if="!$last"></md-divider>
+                <span>Base MSRP: {{eachcar.Pricing.BaseMSRP}}</span>
+                <md-divider ng-if="!$last"></md-divider>
+                <span>Total Of Options: {{eachcar.Pricing.Options}}</span>
+                <md-divider ng-if="!$last"></md-divider>
+                <span>Destination Charges: {{eachcar.Pricing.DestinationDeliveryCharge}}</span>
+                <md-divider ng-if="!$last"></md-divider>
+                <span>MSRP: {{eachcar.Pricing.MSRP}}</span>
             </div>
             <div class="yourvehicle">
-
+                <span class="vehicleheading">Your Vehicle</span>
+                <span>EPA-Est MPG: {{eachcar.MPG.City}} city {{eachcar.MPG.Hiway}} hiway</span>
+                <span>Engine: {{eachcar.NormalizeEngine}}</span>
+                <span>Drivetrain: {{eachcar.NormalizeDrive}}</span>
+                <span>Transmission: {{eachcar.NormalizeTransmission}}</span>
+                <span>Exterior: {{eachcar.NormalizeTrimColor}}</span>
+                <span>Interior: {{eachcar.NormalizeTrimType}}</span>
             </div>
+        </div>
         </div>
 </div>

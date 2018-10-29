@@ -15,11 +15,11 @@
     <div class="grid-row">
             <div class="cards" ng-repeat="car in cars" | filter: {exteriorColorName}>
                 <img class="imges" src="http://build.ford.com/dig/Ford/Mustang/2017/HD-FULL/ + {{car.ImageToken}} + /EXT/1/vehicle.png?r=NaN" height="150px" width="150px" />
-                 {{car.Model.Year}} {{car.Model.ModelName}} {{car.Model.Make}} 
+                 <span>{{car.Model.Year}} {{car.Model.ModelName}} {{car.Model.Make}} </span>
                  <div className="card4">
                         {{car.Vin}}|
                         {{car.Pricing.MSRP}}
-                          <input class="btn1" type="button" value="VIEW DETAILS" ng-click="viewcardetails(car)"/>
+                        <input class="btn1" type="button" value="VIEW DETAILS" ng-click="viewcardetails(car)"/>
                 </div>       
             </div>
     </div>
