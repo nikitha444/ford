@@ -1,14 +1,14 @@
-.column1{
+.filterSidebar{
     width: 26%;
     // border:1px solid gray;
   }
-  .column2{
+  .carsGridRow{
     // border:1px solid gray;
     width: 80%;
     display:flex;
     justify-content:flex-end;
   }
-  .row3{
+  .fordSidebarGrid{
     color: #222;
     display:flex;
     flex-direction:row;
@@ -52,11 +52,11 @@
     flex-direction:column;
     flex-wrap:wrap;
   }
-  .fst{
+  .exteriorSidebar {
     display:flex;
     flex-direction:column;
   }
-  .row1{
+  .filters{
     position:absolute;
     float:left;
     display:flex;
@@ -83,14 +83,14 @@
     justify-content: flex-start;
       
     }
-  .mn{
+  .carsGrid {
     display:flex;
     flex-direction:column;
       // justify-content:flex-end;
     padding-left: 30px;
     width:82%;
   }
-  .row2{
+  .carsGridHeader {
       display:flex;
       flex-direction:row;
       justify-content:flex-start;
