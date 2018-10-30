@@ -10,8 +10,8 @@
  
     var app = angular.module('jiffApp');
  
-    app.controller('FordCtrl', ['$scope', 'programs', 'carsprogram', 'exteriorprogram', 'interiorprogram', 'sortprogram', '$routeParams', '$location',
-        function ($scope, programs, carsprogram, exteriorprogram, interiorprogram, sortprogram, $routeParams, $location) {
+    app.controller('FordCtrl', ['$scope', 'programs', '$routeParams', '$location',
+        function ($scope, programs, $routeParams, $location) {
 
             var getcolors = function () {
                 console.log("constructer");
@@ -24,7 +24,7 @@
             };
             getcolors();
             var getallcars = function () {
-                var cars = carsprogram.getCars();
+                var cars = programs.getCars();
                 cars.then(function(result) {
                     console.log("data.cars", result.Response.VehicleSearch.Vehicles.Vehicle)  
                     $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
@@ -39,7 +39,7 @@
             $scope.onClickExterior= function (exColorName) {
                 $location.path("/dashboard/"+ exColorName);
                 $scope.exteriorColorName= $routeParams.color;
-                var extfilter = exteriorprogram.getExtFilter($scope.exteriorColorName);
+                var extfilter = programs.getExtFilter($scope.exteriorColorName);
                 extfilter.then(function(result) {  
                     $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
                     console.log("excars", result.Response.VehicleSearch.Vehicles.Vehicle)
@@ -50,7 +50,7 @@
             };
             $scope.onClickInterior= function (inColorName) {
                 $scope.interiorColorName= inColorName;
-                var intfilter = interiorprogram.getIntFilter($scope.interiorColorName);
+                var intfilter = programs.getIntFilter($scope.interiorColorName);
                 intfilter.then(function(result) {  
                     $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
                 });
@@ -69,7 +69,7 @@
                   else {
                     $scope.sortbyprice = 'desc';
                   }
-                var sortpricefilter = sortprogram.getSortFilter($scope.sortbyprice);
+                var sortpricefilter = programs.getSortFilter($scope.sortbyprice);
                 sortpricefilter.then(function(result) {  
                 $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
                 });

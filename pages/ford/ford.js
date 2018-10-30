@@ -1,4 +1,4 @@
-angular.module('ford',['programService', 'programServiceCars', 'programServiceExterior', 'programServiceInterior', 'programServiceSort'])
+angular.module('ford',['programService'])
 .component('ford', {
 	templateUrl: "pages/ford/ford.html",
 	controller: "FordCtrl"
