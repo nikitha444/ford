@@ -36,54 +36,30 @@
             $scope.valuemin= "";
             $scope.valuemax= "";
             $scope.sortbyprice = "asc";
-            $scope.onClickExterior= function (exColorName) {
-                $location.path("/dashboard/"+ exColorName);
-                $scope.exteriorColorName= $routeParams.color;
-                var extfilter = programs.getExtFilter($scope.exteriorColorName);
+            $scope.$watch(function(scope) { return scope.cars },
+             function() {}
+            );
+        $scope.onClickExterior= function (exColorName, exColorId) {
+                $scope.exteriorColorName= exColorName;
+                var extfilter = programs.getExtFilter(exColorId);
                 extfilter.then(function(result) {  
-                    $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
-                    console.log("excars", result.Response.VehicleSearch.Vehicles.Vehicle)
-            })
-            .catch(function(err){
+                    if (result) {
+                        console.log("excars", result.Response.VehicleSearch.Vehicles.Vehicle)
+                        $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
+                        $scope.$evalAsync(function () { 
+                            $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
+                         })
+                        // $scope.$apply(function() {
+                        //     $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
+                        // });
+                    }
+            }).catch(function(err) {
                 console.log("error", err)
             });
-            };
-            $scope.onClickInterior= function (inColorName) {
-                $scope.interiorColorName= inColorName;
-                var intfilter = programs.getIntFilter($scope.interiorColorName);
-                intfilter.then(function(result) {  
-                    $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
-                });
-            };
-            $scope.valueMaxChange= function (valmax) {
-
-                $scope.valuemax = valmax;
-            };
-            $scope.valueMinChange= function (valmin) {
-                $scope.valuemin = valmin;
-            };
-            $scope.valuesortprice= function (valsortprice) {
-                if (valsortprice == 'low') {
-                    $scope.sortbyprice = 'asc';
-                  }
-                  else {
-                    $scope.sortbyprice = 'desc';
-                  }
-                var sortpricefilter = programs.getSortFilter($scope.sortbyprice);
-                sortpricefilter.then(function(result) {  
-                $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
-                $scope.cars = $scope.cars.find((car) => {
-                    console.log("exxx", $scope.exteriorColorName.includes(car.NormalizeTrimColor));
-                    return $scope.exteriorColorName.includes(car.NormalizeTrimColor);
-                });
-                console.log("carsssss", $scope.cars)
-            }).catch(function (err){
-                console.log("error", err);
-            });
-        };
-        $scope.onClickInterior = function (inColorName) {
+            };           
+        $scope.onClickInterior = function (inColorName, inColorId) {
             $scope.interiorColorName = inColorName;
-            var intfilter = interiorprogram.getIntFilter($scope.interiorColorName);
+            var intfilter = interiorprogram.getIntFilter(inColorId);
             intfilter.then(function (result) {  
                 $scope.cars = result.Response.VehicleSearch.Vehicles.Vehicle;
             }).catch(function(err) {

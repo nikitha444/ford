@@ -5,7 +5,7 @@
                   <p>Exterior Color</p>
                       {{exteriorColorName}}
                   <div class="exterior">
-                        <div ng-repeat="excolor in exterior" ng-style="{'background-color':'{{excolor.SwatchHexCode.replace('0x', '#')}}'}" class="exteriorColor" ng-click="onClickExterior(excolor.Name)">
+                        <div ng-repeat="excolor in exterior" ng-style="{'background-color':'{{excolor.SwatchHexCode.replace('0x', '#')}}'}" class="exteriorColor" ng-click="onClickExterior(excolor.Name,excolor.ID)">
                         </div>
                   </div>
             </div>
@@ -14,7 +14,7 @@
                       {{interiorColorName}}
                   <div class="interior">
                         <div ng-repeat="incolor in interior" class="interiorColor">
-                        <img src={{incolor.SwatchUrl}} ng-click="onClickInterior(incolor.Name)">
+                        <img src={{incolor.SwatchUrl}} ng-click="onClickInterior(incolor.Name, incolor.ID)">
                         {{incolor.Name}}
                         </div>
                 </div>
